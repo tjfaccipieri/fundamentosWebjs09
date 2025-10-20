@@ -5,17 +5,17 @@
 }
 
 :root {
-  --purple-200: #9a7bd1;
-  --purple-500: #6b36c8;
-  --purple-800: #441f88;
-  --black-800: #171717;
-  --gray-200: #cccccc;
   --white: #f9f9f9;
+  --black: #141514ff;
+  --brown: #341f0dff;
+  --orange: #cb6a10ff;
+  --green: #9ae19dff;
+  --purple: #76427fff;
 }
 
 body {
-  background: var(--gray-200);
-  color: var(--black-800);
+  background: var(--black);
+  color: var(--white);
   font-family: sans-serif;
 }
 
@@ -26,19 +26,20 @@ h3 {
 }
 
 h1 {
-  color: var(--white);
+  color: var(--green);
   font-size: 2rem;
 }
 
 h2 {
-  color: var(--black-800);
+  color: var(--orange);
   font-size: 1.5rem;
   padding: 1rem 0;
   font-weight: 600;
+  text-align: center;
 }
 
 h3 {
-  color: var(--white);
+  color: var(--green);
   font-size: 1rem;
   text-align: center;
 }
@@ -50,12 +51,12 @@ p {
 }
 
 section {
-  width: 90vw;
+  width: 75vw;
   margin: 2rem auto;
 }
 
 header {
-  background: var(--purple-800);
+  background: var(--black);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -71,13 +72,13 @@ nav ul {
 }
 
 nav a {
-  color: var(--white);
+  color: var(--green);
   font-size: 1.1rem;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: var(--purple-200);
+  color: var(--orange);
   text-decoration: underline;
 }
 
@@ -88,8 +89,11 @@ nav a:hover {
 }
 
 #about img {
-  width: 200px;
+  width: 15vw;
   flex-shrink: 0;
+  border-radius: 50%;
+  border: 4px solid var(--purple);
+  padding: 4px;
 }
 
 #about p {
@@ -104,12 +108,20 @@ nav a:hover {
   font-size: 1.25rem;
 }
 
+.frameVideo {
+  width: 60vw;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  border: 4px solid var(--purple);
+  padding: 4px;
+}
+
 footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  color: var(--white);
+  color: var(--green);
   background-color: var(--purple-500);
   font-weight: bold;
   text-align: center;
@@ -141,8 +153,10 @@ footer img:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  width: 90%;
-  margin: 2rem auto;
+  width: 85vw;
+  min-height: 80vh;
+  margin: 0 auto;
+  align-items: center;
 }
 
 form {
@@ -153,12 +167,22 @@ form {
   border-radius: 0.75rem;
 }
 
+form label {
+  color: var(--orange);
+}
+
 form input,
 textarea {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 0.75rem;
-  border: none;
+  border: 2px solid var(--orange);
   font-size: 1rem;
+  color: var(--purple);
+  outline: none;
+}
+
+form input::placeholder, textarea::placeholder {
+  color: var(--purple)
 }
 
 textarea {
@@ -167,22 +191,24 @@ textarea {
 }
 
 form button {
-  background: var(--purple-800);
+  background: transparent;
   color: var(--white);
-  padding: .75rem;
-  border: 1px solid var(--purple-500);
-  border-radius: .75rem;
+  padding: 0.75rem;
+  border: 2px solid var(--orange);
+  border-radius: 0.75rem;
   font-weight: 700;
   cursor: pointer;
+  width: 50%;
+  margin: 0 auto;
 }
 
 form button:hover {
-  background-color: var(--purple-500);
+  background-color: var(--orange);
 }
 
 form span {
   color: #ff0000;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .article_mapa {
@@ -191,13 +217,18 @@ form span {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: var(--white);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(52, 31, 13, 0.75);
+  /* border: 1px solid rgba(255, 255, 255, 0.125); */
   padding: 1.5rem;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
+  border: 2px dotted var(--orange);
+  height: fit-content;
 }
 
 .article_mapa address {
-  width: 75%;
+  color: var(--green);
 }
 
 .article_mapa address p {
@@ -206,4 +237,29 @@ form span {
 
 .article_mapa iframe {
   align-self: center;
+  border-radius: 8px;
+  box-shadow: 5px 5px 6px -1px var(--orange);
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile {
+    display: block;
+  }
+
+  .computador {
+    display: none;
+  }
+}
+
+@media print {
+  img {
+    display: none;
+  }
+  p {
+    font-size: 250px;
+  }
 }

@@ -21,13 +21,14 @@
       </nav>
     </header>
     <main class="main_contato">
-      <form action="#" method="post" id="formulario">
+      <form id="formulario" method="post" action="#" onsubmit="enviarForm(event)" >
         <label for="name">Nome: </label>
         <input
           id="name"
           type="text"
           name="name"
           placeholder="Digite seu nome"
+          onkeyup="validaNome()"
         />
         <span id="errNome"></span>
 
@@ -37,6 +38,7 @@
           id="email"
           name="email"
           placeholder="Digite seu email"
+          onkeyup="validaEmail()"
         />
         <span id="errEmail"></span>
 
@@ -46,6 +48,7 @@
           name="subject"
           id="subject"
           placeholder="Digite o assunto da mensagem"
+          onkeyup="validaAssunto()"
         />
         <span id="errSubject"></span>
 
@@ -54,7 +57,9 @@
           name="message"
           id="message"
           placeholder="Digite aqui a sua mensagem..."
+          onkeyup="validaMensagem()"
         ></textarea>
+        <span style="color: var(--green)"> <span id='errMessage'>0</span> / 140 caracteres</span>
 
         <button type="submit">Enviar</button>
       </form>
@@ -92,5 +97,7 @@
       </section>
       <h3>Feito com 🛹 por Thiago Faccipieri - 2025</h3>
     </footer>
+
+    <script src="./assets/script/script.js"></script>
   </body>
 </html>

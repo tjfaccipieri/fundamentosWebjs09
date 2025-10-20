@@ -66,3 +66,21 @@ header {
   width: 30vw;
 }
 ```
+
+# Responsividade
+> O que é responsividade?
+* É fazer a página se ajustar a diferentes tamanhos de tela.
+* Modificar certos elementos da página, de acordo com o tamanho da tela.
+
+Tamanho de tela => resolução da tela
+
+**Breakpoints** === **Ponto de quebra**
+
+
+## cores do projeto
+1- preto
+2- marrom café
+3- verde
+4- laranja
+5- roxo
+
